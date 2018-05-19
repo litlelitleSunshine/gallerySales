@@ -4,16 +4,15 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 var store = new Vuex.Store({
   state: {
-    displayLoginModal: false
+    displayLoginModal: true,
+    count: 1
   },
   mutations: {
     switchLoginModal (state) {
-      state.displayLoginModal = !state.displayLoginModal
-    }
-  },
-  getters: {
-    getLoginModal (state) {
-      return state.displayLoginModal
+      state.displayLoginModal = true
+    },
+    closeLoginModal (state) {
+      state.displayLoginModal = false
     }
   }
 })

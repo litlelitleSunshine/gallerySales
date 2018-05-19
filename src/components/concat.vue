@@ -419,11 +419,9 @@ export default {
         }
         window.zturn = zturn
       }(window, document))
-      console.log('passed')
     }
   },
   mounted: function () {
-    console.log('mounted')
     this.initBackground()
     var Zturn = window.zturn
     var aa = new Zturn({

@@ -1,60 +1,83 @@
 <template>
-  <Modal v-model="displayLoginModal" title="登录">
-    <Form>
-      <FormItem>
-        <Input v-model="account" icon="person" placeholder="请输入邮箱/手机号码" />
-      </FormItem>
-      <FormItem>
-        <Input v-model="password" icon="eye-disabled" type="password" placeholder="请输入密码" />
-      </FormItem>
+  <div id="login-modal">
+    <Form ref="loginModal" :rules="rule" :model="loginData">
+        <FormItem prop="user">
+            <i-input type="text" v-model="loginData.user" placeholder="请输入电话/邮箱" clearable>
+                <Icon type="ios-person-outline" slot="prepend"></Icon>
+            </i-input>
+        </FormItem>
+        <FormItem prop="password">
+            <i-input type="password" v-model="loginData.password" placeholder="请输入密码" clearable>
+                <Icon type="ios-locked-outline" slot="prepend"></Icon>
+            </i-input>
+        </FormItem>
     </Form>
-    <div slot="footer">
-      <Button type="primary" long>登录</Button>
-      <p>没有账号?
-        <a href="#/register" @click=hidenLoginModal>点击注册</a>
+    <div class="login-footer">
+      <Button type="primary" long @click="login">登录</Button>
+      <p><a href="#">忘记密码</a></p>
+      <p class="register">没有账号?
+        <a href="#/register" @click="closeLoginModal">点击注册</a>
       </p>
-    </div>
-  </Modal>
+  </div>
+  </div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import gallery from '../js/share'
 export default {
   name: 'loginModal',
   data () {
+    const validateUser = (rule, value, callback) => {
+      const regPhone = gallery.validatePhone(value)
+      const regEmail = gallery.validateEmail(value)
+      if (value === '') {
+        callback(new Error('请输入账号'))
+      } else if (!(regPhone || regEmail)) {
+        callback(new Error('请输入正确的格式'))
+      }
+      callback()
+    }
     return {
-      account: '',
-      password: '',
-      displayLoginModal: !this.$store.state.displayLoginModal
+      loginData: {
+        user: '',
+        password: ''
+      },
+      rule: {
+        user: [{required: true, message: '', trigger: 'change', validator: validateUser}],
+        password: [{required: true, message: '请输入密码', trigger: 'change'}]
+      }
     }
   },
   methods: {
-    hidenLoginModal () {
-      this.displayLoginModal = false
+    closeLoginModal () {
+      this.$Modal.remove()
+    },
+    login () {
+      var self = this
+      self.$refs['loginModal'].validate((valid) => {
+      })
     }
-  },
-  computed: { ...mapGetters(['getLoginModal']) },
-  mounted: function () {
   }
 }
 </script>
 
 <style>
-  .ivu-modal .ivu-input-wrapper {
+   #login-modal .ivu-form-item-content {
     margin-top: 10px
   }
 
-  .ivu-modal .ivu-modal-header-inner {
-    color: initial;
-    font-size: 20px;
-  }
-
-  .ivu-modal .ivu-modal-footer {
-    border-top: none;
-  }
-
-  .ivu-modal .ivu-modal-footer p {
+  #login-modal .login-footer p {
     margin-top: 10px;
-    font-size: italic;
+    height: 20px;
+    display: inline-block;
+  }
+
+  #login-modal .login-footer .register {
+    position: absolute;
+    right: 0
+  }
+
+  .ivu-modal-body .ivu-modal-confirm-footer {
+    display: none;
   }
 </style>

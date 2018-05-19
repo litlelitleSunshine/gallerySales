@@ -18,7 +18,7 @@ export default {
 
 <style>
 #app .copyRight{
-  position: absolute;
+  /* position: absolute; */
   bottom: 0;
   display: flex;
   justify-content: center;
