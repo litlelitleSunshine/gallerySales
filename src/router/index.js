@@ -5,6 +5,7 @@ import login from '@/components/login'
 import concat from '@/components/concat'
 import register from '@/components/register'
 import show from '@/components/show'
+import order from '@/components/order'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/register',
       name: 'register',
       component: register
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: order
     }
   ]
 })

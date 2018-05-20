@@ -43,20 +43,42 @@
       </div>
     </div>
     <div class="show-item">
-      <ul>
-        <li v-for="img in imgs" :key="img.key">
-          <img :src="img.src"/>
+      <ul class="show-wrapper">
+        <li class="show-content" v-for="img in imgs" :key="img.id">
+          <img :src="img.src" @click="shoppingView(img.id)"/>
         </li>
       </ul>
     </div>
     </Col>
     </Row>
+    <Modal v-model="viewShopping.display" :title="viewShopping.title">
+      <div class="img-wrap">
+        <img :src="viewShopping.src" alt="picture">
+      </div>
+      <ul class="info-wrap">
+        <li>作者
+          <p>{{viewShopping.author}}</p>
+        </li>
+        <li>简介
+          <p>{{viewShopping.description}}</p>
+        </li>
+        <li>单价
+          <p>{{viewShopping.price}}</p>
+        </li>
+      </ul>
+      <div slot="footer">
+            <Button type="primary" size="large" long  @click="goShopping">购买</Button>
+        </div>
+    </Modal>
   </div>
 </template>
 
 <script>
 import carousel from './carousel'
 import picture from '../js/picture'
+import gallery from '../js/share'
+import user from '../js/user'
+
 export default {
   name: 'show',
   components: { carousel },
@@ -77,7 +99,37 @@ export default {
         flowers: false,
         contentOthers: false
       },
-      imgs: picture.img
+      imgs: picture.img,
+      viewShopping: {
+        display: false,
+        title: '',
+        src: '',
+        author: '',
+        description: '',
+        price: '',
+        number: 1
+      }
+    }
+  },
+  methods: {
+    shoppingView (id) {
+      var self = this
+      let source = gallery.findSource(id, self.imgs)
+      self.viewShopping.display = true
+      self.viewShopping = Object.assign({}, self.viewShopping, source)
+    },
+    goShopping () {
+      var self = this
+      if (!user.login) {
+        this.$Message.info({
+          content: '您暂未登录，请先登录！',
+          duration: 3})
+      } else {
+        user.order.push(self.viewShopping)
+        this.$router.push({
+          path: '/order'
+        })
+      }
     }
   }
 }
@@ -121,5 +173,24 @@ export default {
 
 #show-item .search-button{
   margin-top: 20px;
+  margin-bottom: 20px
+}
+
+/* show-item style */
+#show-item .show-item .show-wrapper{
+margin-top:125px;
+background: white;
+}
+#show-item .show-item .show-wrapper .show-content{
+  list-style: none;
+  display: inline-flex;
+  height: 300px;
+}
+#show-item .show-item .show-wrapper .show-content img
+{
+display: block;
+width: 100%;
+height: 100%;
+object-fit:contain;
 }
 </style>

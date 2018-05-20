@@ -12,43 +12,84 @@ import print3 from '@/img/print3.jpg'
 var picture = {}
 
 picture.img = [{
+  title: 'oil1',
+  author: 'Cici',
+  description: 'sdfagsdf',
+  price: '123445',
   src: oil1,
-  key: 1
-}, {
+  id: 1
+},
+{
+  title: 'oil2',
+  author: 'CIci',
+  description: 'dsadfsg',
+  price: '234',
   src: oil2,
-  key: 2
+  id: 2
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: oil3,
-  key: 3
+  id: 3
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: oil4,
-  key: 4
+  id: 4
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: chinese1,
-  key: 5
+  id: 5
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: chinese2,
-  key: 6
+  id: 6
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: chinese3,
-  key: 7
+  id: 7
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: print1,
-  key: 8
+  id: 8
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: print2,
-  key: 9
+  id: 9
 },
 {
+  title: '',
+  author: '',
+  description: '',
+  price: '',
   src: print3,
-  key: 10
+  id: 10
 }
 ]
 export default picture

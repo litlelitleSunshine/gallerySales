@@ -10,4 +10,13 @@ gallery.validatePhone = function (str) {
   return regex.test(str)
 }
 
+gallery.findSource = function (id, arr) {
+  let result
+  arr.forEach(function (item) {
+    if (item.id === id) {
+      result = Object.assign({}, item)
+    }
+  })
+  return result
+}
 export default gallery
