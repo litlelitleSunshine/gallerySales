@@ -41,7 +41,7 @@
   <Modal v-model="showTerms">
       <div slot="header">
           <div class="modal-header">
-              <h2>Terms and Conditions</h2>
+              <h2>用户协议</h2>
           </div>
       </div>
       <div class="modal-body">

@@ -13,54 +13,9 @@
             <Menu-item key="1" name="home">
               <router-link to="/home">首页</router-link>
             </Menu-item>
-            <Submenu key="2" name="browser">
-              <template slot="title">逛一逛
-                <router-link to="/show">全部</router-link>
-              </template>
-              <Menu-item key="2-0" name="all">
-                <router-link to="/show">全部</router-link>
-              </Menu-item>
-              <Menu-group title="形式分类">
-                <Menu-item key="2-1-1" name="oilPainting">
-                  <a href="#/show" @click="console.log(1)">油画</a>
-                </Menu-item>
-                <Menu-item key="2-1-2" name="printPainting">
-                  <a href="#">版画</a>
-                </Menu-item>
-                <Menu-item key="2-1-3" name="chinesePainting">
-                  <a href="#">国画</a>
-                </Menu-item>
-                <Menu-item key="2-1-4" name="waterPainting">
-                  <a href="#">水彩</a>
-                </Menu-item>
-                <Menu-item key="2-1-5" name="calligraphy">
-                  <a href="#">书法</a>
-                </Menu-item>
-                <Menu-item key="2-1-6" name="photos">
-                  <a href="#">摄影</a>
-                </Menu-item>
-                <Menu-item key="2-1-7" name="others">
-                  <a href="#">其它</a>
-                </Menu-item>
-              </Menu-group>
-              <Menu-group title="内容分类">
-                <Menu-item key="2-2-1" name="person">
-                  <a href="#">人物</a>
-                </Menu-item>
-                <Menu-item key="2-2-2" name="sights">
-                  <a href="#">风景</a>
-                </Menu-item>
-                <Menu-item key="2-2-3" name="animals">
-                  <a href="#">动物</a>
-                </Menu-item>
-                <Menu-item key="2-2-4" name="flowers">
-                  <a href="#">花卉</a>
-                </Menu-item>
-                <Menu-item key="2-2-5" name="others">
-                  <a href="#">其它</a>
-                </Menu-item>
-              </Menu-group>
-            </Submenu>
+            <Menu-item key="2" name="browser">
+              <router-link to="/show">逛一逛</router-link>
+            </Menu-item>
             <Menu-item key="3" name="shoppingCar">
               <Icon type="ios-cart" color="#99CCCC" size="16"></Icon>
               购物车

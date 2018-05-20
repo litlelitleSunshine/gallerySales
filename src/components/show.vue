@@ -1,13 +1,125 @@
 <template>
-  <div id="show-item">asdfgg</div>
+  <div id="show-item">
+    <Row>
+      <Col span="20" offset="2">
+    <div class="search">
+      <Row>
+        <Col span="3" offset="3">
+        <span>Discovery</span>
+          </Col>
+        <Col span="12">
+          <Input placeholder="请输入商品名称" icon="ios-search" clearable size="large"/>
+        </Col>
+      </Row>
+    </div>
+    <div class="carousel">
+      <carousel></carousel>
+    </div>
+    <div class="filter">
+      <h2>搜索条件</h2>
+      <div class="all-search">
+        <Checkbox v-model="filter.all">全部</Checkbox>
+      </div>
+      <div class="form-search">
+        <span class="classify-title">按形式分类</span>
+        <Checkbox v-model="filter.oilPainting">油画</Checkbox>
+        <Checkbox v-model="filter.printPainting">版画</Checkbox>
+        <Checkbox v-model="filter.chinesePainting">国画</Checkbox>
+        <Checkbox v-model="filter.waterPainting">水彩</Checkbox>
+        <Checkbox v-model="filter.calligraphy">书法</Checkbox>
+        <Checkbox v-model="filter.photos">摄影</Checkbox>
+        <Checkbox v-model="filter.formOthers">其它</Checkbox>
+      </div>
+      <div class="content-search">
+        <span class="classify-title">按内容分类</span>
+        <Checkbox v-model="filter.persons">人物</Checkbox>
+        <Checkbox v-model="filter.sights">风景</Checkbox>
+        <Checkbox v-model="filter.animals">动物</Checkbox>
+        <Checkbox v-model="filter.flowers">花卉</Checkbox>
+        <Checkbox v-model="filter.contentOthers">其它</Checkbox>
+      </div>
+      <div class="search-button">
+        <Button type="primary" shape="circle" icon="ios-search" size="large">搜索</Button>
+      </div>
+    </div>
+    <div class="show-item">
+      <ul>
+        <li v-for="img in imgs" :key="img.key">
+          <img :src="img.src"/>
+        </li>
+      </ul>
+    </div>
+    </Col>
+    </Row>
+  </div>
 </template>
 
 <script>
+import carousel from './carousel'
+import picture from '../js/picture'
 export default {
-  name: 'show'
+  name: 'show',
+  components: { carousel },
+  data () {
+    return {
+      filter: {
+        all: false,
+        oilPainting: false,
+        printPainting: false,
+        chinesePainting: false,
+        waterPainting: false,
+        calligraphy: false,
+        photos: false,
+        formOthers: false,
+        persons: false,
+        sights: false,
+        animals: false,
+        flowers: false,
+        contentOthers: false
+      },
+      imgs: picture.img
+    }
+  }
 }
 </script>
 
 <style>
 
+/* search input style */
+#show-item .search{
+  margin-top: 20px;
+}
+
+#show-item .search span{
+  font-size: 30px;
+  line-height: 36px;
+  font-family: STLiti;
+  color: white
+}
+
+/* classify style */
+#show-item .filter {
+  /* margin-top: 40px; */
+  background: white;
+  padding: 10px 30px;
+}
+#show-item .filter .all-search,
+#show-item .filter .form-search,
+#show-item .filter .content-search{
+  margin-top: 20px;
+}
+
+#show-item .filter .classify-title{
+  font-size: 16px;
+  margin-right: 20px
+}
+
+#show-item .filter .ivu-checkbox-wrapper{
+  margin-right: 40px;
+  font-size: 16px;
+}
+
+#show-item .search-button{
+  margin-top: 20px;
+}
 </style>
