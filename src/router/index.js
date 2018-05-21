@@ -6,6 +6,7 @@ import concat from '@/components/concat'
 import register from '@/components/register'
 import show from '@/components/show'
 import order from '@/components/order'
+import personal from '@/components/personal'
 
 Vue.use(Router)
 
@@ -40,6 +41,11 @@ export default new Router({
       path: '/order',
       name: 'order',
       component: order
+    },
+    {
+      path: '/personal',
+      name: 'personal',
+      component: personal
     }
   ]
 })

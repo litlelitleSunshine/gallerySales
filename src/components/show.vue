@@ -65,6 +65,9 @@
         <li>单价
           <p>{{viewShopping.price}}</p>
         </li>
+        <li>数量
+          <p>{{viewShopping.totalNumber}}</p>
+        </li>
       </ul>
       <div slot="footer">
             <Button type="primary" size="large" long  @click="goShopping">购买</Button>
@@ -107,6 +110,7 @@ export default {
         author: '',
         description: '',
         price: '',
+        totalNumber: 1,
         number: 1
       }
     }

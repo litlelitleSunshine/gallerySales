@@ -15,24 +15,27 @@ picture.img = [{
   title: 'oil1',
   author: 'Cici',
   description: 'sdfagsdf',
-  price: '123445',
+  price: '1',
   src: oil1,
+  totalNumber: 2,
   id: 1
 },
 {
   title: 'oil2',
-  author: 'CIci',
+  author: 'Cici',
   description: 'dsadfsg',
-  price: '234',
+  price: '2',
+  totalNumber: 2,
   src: oil2,
   id: 2
 },
 {
-  title: '',
-  author: '',
+  title: 'oil4',
+  author: 'Cici',
   description: '',
-  price: '',
+  price: '123445',
   src: oil3,
+  totalNumber: 2,
   id: 3
 },
 {
@@ -41,6 +44,7 @@ picture.img = [{
   description: '',
   price: '',
   src: oil4,
+  totalNumber: 2,
   id: 4
 },
 {
@@ -49,6 +53,7 @@ picture.img = [{
   description: '',
   price: '',
   src: chinese1,
+  totalNumber: 2,
   id: 5
 },
 {
@@ -57,6 +62,7 @@ picture.img = [{
   description: '',
   price: '',
   src: chinese2,
+  totalNumber: 2,
   id: 6
 },
 {
@@ -65,6 +71,7 @@ picture.img = [{
   description: '',
   price: '',
   src: chinese3,
+  totalNumber: 2,
   id: 7
 },
 {
@@ -73,6 +80,7 @@ picture.img = [{
   description: '',
   price: '',
   src: print1,
+  totalNumber: 2,
   id: 8
 },
 {
@@ -81,6 +89,7 @@ picture.img = [{
   description: '',
   price: '',
   src: print2,
+  totalNumber: 2,
   id: 9
 },
 {
@@ -89,6 +98,7 @@ picture.img = [{
   description: '',
   price: '',
   src: print3,
+  totalNumber: 2,
   id: 10
 }
 ]
