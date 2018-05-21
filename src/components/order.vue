@@ -3,7 +3,7 @@
   <Row>
     <Col span="20" offset="2">
   <div class="show-table">
-    <Table ref="showTable" :no-data-text="noDataText" :columns="columns" :data="orderData" height="200" @on-select="plusPrice" @on-select-cancel="minusPrice" @on-select-all="allPrice"/>
+    <Table ref="showTable" :no-data-text="noDataText" :columns="columns" :data="orderData"  @on-select="plusPrice" @on-select-cancel="minusPrice" @on-select-all="allPrice" @on-selection-change="selectChange"/>
   </div>
   <div class="show-total">
     <span>合计：</span>
@@ -15,8 +15,9 @@
     </div>
     <div class="btn-group">
       <Button type="ghost" size="large" @click="deleteItems">删除</Button>
-      <Button type="primary" size="large">支付</Button>
+      <Button type="primary" size="large" @click="pay">支付</Button>
     </div>
+    <div id="QRcode" v-if="showQrcode"></div>
   </div>
   </Col>
   </Row>
@@ -25,6 +26,8 @@
 
 <script>
 import user from '../js/user'
+import gallery from '../js/share'
+// import QRCode from 'qrcode'
 export default {
   name: 'order',
   data () {
@@ -77,7 +80,10 @@ export default {
       orderData: user.order,
       userAddress: user.address[0],
       total: 0,
-      noDataText: '您还未挑选任何作品噢~'
+      noDataText: '您还未挑选任何作品噢~',
+      showQrcode: false,
+      totalOrder: [],
+      flag: 0
     }
   },
   mounted () {
@@ -97,12 +103,27 @@ export default {
         self.total += item.number * item.price
       })
     },
+    selectChange (selection) {
+      this.flag = selection.length
+      console.log(selection)
+    },
     editAddress () {
       this.$router.push({
         path: '/personal'
       })
     },
     deleteItems () {
+    },
+    pay () {
+      let self = this
+      if (self.flag === 0) this.$Message.info('请选择需要购买的作品')
+      else {
+        self.totalOrder.push(self.orderData, self.userAddress, self.total, gallery.orderNumber())
+        user.totalOrder = Object.assign({}, self.totalOrder)
+        this.$router.push({
+          path: '/orderDetail'
+        })
+      }
     }
   }
 }

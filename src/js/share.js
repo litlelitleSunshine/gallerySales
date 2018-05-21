@@ -19,4 +19,12 @@ gallery.findSource = function (id, arr) {
   })
   return result
 }
+
+gallery.orderNumber = function () {
+  let s = (Math.floor(Math.random() * 10000) % 9 + 1).toString()
+  for (var i = 0; i < 8; i++) {
+    s = s + (Math.floor(Math.random() * 10000) % 10).toString()
+  }
+  return s
+}
 export default gallery

@@ -382,7 +382,7 @@ export default {
       Awidth: 1024,
       scale: 0.6,
       auto: true,
-      turning: 5000
+      turning: 1000
     })
     ab.init()
   }
@@ -499,5 +499,9 @@ export default {
         background: #bc241d;
         margin: 0 auto;
         display: block;
+    }
+
+    #home li{
+        list-style: none;
     }
 </style>

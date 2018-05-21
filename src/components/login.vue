@@ -13,7 +13,7 @@
         </FormItem>
     </Form>
     <div class="login-footer">
-      <Button type="primary" long @click="login">登录</Button>
+      <Button type="primary" long @click="login"> 登录</Button>
       <p><a href="#">忘记密码</a></p>
       <p class="register">没有账号?
         <a href="#/register" @click="closeLoginModal">点击注册</a>

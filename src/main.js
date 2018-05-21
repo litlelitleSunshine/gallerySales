@@ -7,6 +7,7 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import './css/main.css'
 import './css/normalize.css'
+import 'qrcode'
 import store from './store/store.js'
 
 Vue.config.productionTip = false

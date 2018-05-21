@@ -7,6 +7,7 @@ import register from '@/components/register'
 import show from '@/components/show'
 import order from '@/components/order'
 import personal from '@/components/personal'
+import orderDetail from '@/components/orderDetail'
 
 Vue.use(Router)
 
@@ -46,6 +47,11 @@ export default new Router({
       path: '/personal',
       name: 'personal',
       component: personal
+    },
+    {
+      path: '/orderDetail',
+      name: 'orderDetail',
+      component: orderDetail
     }
   ]
 })
