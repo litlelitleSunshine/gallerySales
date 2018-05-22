@@ -55,6 +55,8 @@ export default {
     login () {
       var self = this
       self.$refs['loginModal'].validate((valid) => {
+        self.$Modal.remove()
+        window.location.href = 'http://localhost:8080/#/personal'
       })
     }
   }

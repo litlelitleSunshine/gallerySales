@@ -6,7 +6,7 @@
       <Col span="12" offset="10">
     <div class="title">免费注册</div>
     </Col></Row>
-    <Form :model="register" :rules = rule :label-width="100">
+    <Form ref="registerForm" :model="register" :rules = rule :label-width="100">
       <FormItem prop="name" label=" 昵称">
         <Input placeholder="请输入昵称" v-model="register.name" clearable/>
       </FormItem>
@@ -33,7 +33,7 @@
         </Checkbox>
       </FormItem>
       <FormItem>
-        <Button type="primary" long :disabled="!register.agree">提交</Button>
+        <Button type="primary" long :disabled="!register.agree" @click="registerEvent">提交</Button>
       </FormItem>
     </Form>
   </Col>
@@ -126,6 +126,16 @@ export default {
         confirmPassword: [{required: true, validator: validateComfirmPassword}],
         verCode: [{required: true, validator: validateVerCode}]
       }
+    }
+  },
+  methods: {
+    registerEvent () {
+      var self = this
+      this.$refs['registerForm'].validate((valid) => {
+        if (valid) {
+          self.$Message.info('注册成功！')
+        }
+      })
     }
   }
 }

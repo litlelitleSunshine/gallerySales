@@ -1,4 +1,8 @@
 var user = {}
+user.name = '张三'
+user.phone = '1521314520'
+user.email = '12345679@qq.com'
+user.password = 'asdf'
 user.login = true
 user.order = []
 user.totalOrder = []
