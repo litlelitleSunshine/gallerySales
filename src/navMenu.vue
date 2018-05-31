@@ -17,21 +17,14 @@
               <router-link to="/show">逛一逛</router-link>
             </Menu-item>
             <Menu-item key="3" name="shoppingCar">
-              <Icon type="ios-cart" color="#99CCCC" size="16"></Icon>
+              <Icon type="ios-cart" color="blue" size="16"></Icon>
               购物车
               <span>[{{number}}]</span>
             </Menu-item>
-            <Submenu key="4" name="favorite">
-              <template slot="title">
-                <Icon type="ios-heart" color="red" size="16"></Icon>
-                收藏夹</template>
-              <Menu-item key="4-1" name="goods">
-                <a href="#">收藏的物品</a>
-              </Menu-item>
-              <Menu-item key="4-2" name="shop">
-                <a href="#">收藏的店铺</a>
-              </Menu-item>
-            </Submenu>
+            <Menu-item key="4" name="favorite">
+              <Icon type="ios-heart" color="red" size="16"></Icon>
+                <span>收藏夹</span>
+            </Menu-item>
             <Menu-item key="5" name="login">
               <a href="#"  @click="showLoginModal">登录</a>
             </Menu-item>
@@ -98,6 +91,10 @@ export default {
 
   #navMenu .ivu-menu {
     margin-left: 50px;
+  }
+
+  #navMenu a {
+    color: white;
   }
 
   #navMenu .ivu-menu .ivu-menu-item:hover,

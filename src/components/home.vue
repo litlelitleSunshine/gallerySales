@@ -7,273 +7,177 @@
                 <div class="poster-btn poster-prev-btn"></div>
                 <ul id="zturn2" class="poster-list">
                     <li class="poster-item  zturn-item">
-                        <p class="xxgy">学员感言1</p>
+                        <p class="xxgy">油画</p>
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/oil.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span  class="darks">
+                                    &nbsp;&nbsp;油画，色彩的缤纷下，随着想象的思绪，用创造的双手凝固永恒的美。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言2</p>
+                        <p class="xxgy">版画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/print.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;版画,有艺术表现过程的间接性，艺术结果的复数，印痕艺术的审美特征。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言3</p>
+                        <p class="xxgy">国画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/chinese.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;国画,历经数千年的沧桑巨变发展到今天，艺术魅力依然光彩照人，使人觉得常画常新，常见常新，其根本原因就是有妙不可言的中国味。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言4</p>
+                        <p class="xxgy">水彩画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/watercolor.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;水彩画,就其本身而言，具有两个基本特征：一是画面大多具有通透的视觉感觉；二是绘画过程中水的流动性。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">书法</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/shufaa.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
-                                </span>
+                                    <span class="darks">
+                                        &nbsp;&nbsp;书法，书若人然，须备筋骨血肉，血浓骨老，筋藏肉莹，加之姿态奇逸，可谓美矣
+                                    </span>
                             </p>
                         </div>
                     </li>
                     <li class="poster-item  zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">摄影</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/photo.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;我们不只是用相机拍照。我们带到摄影中去的是所有我们读过的书，看过的电影，听过的音乐，爱过的人。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">人物画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/person.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;人物画基本技法：无论中外，在早期绘画的发展史上，都以人物画为主，而 且都为宗教或政治服务
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">风景画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/sights.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;风景画，不是风景如画，而是画如风景。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">动物画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/animal.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                        &nbsp;&nbsp;动物画，不要求惟妙惟肖，允许夸张与变形，但要有个性，要能引起观众的共鸣和生活美的联想。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">花鸟画</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/flower.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;鸟语花香作为大自然中美的对象，早在三代上古，诗人六义，多识于鸟兽草木之名，而绘事之妙，亦相继寓兴于此，与诗人相为表里。
                                 </span>
                             </p>
                         </div>
                     </li>
 
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">猫咪</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/cat.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
-                                </span>
+                                    <span class="darks">
+                                        &nbsp;&nbsp;小猫很懒，每天都在太阳底下睡懒觉，什么事情也不干。
+                                    </span>
                             </p>
                         </div>
                     </li>
                     <li class="poster-item zturn-item">
-                        <p class="xxgy">学员感言</p>
+                        <p class="xxgy">狗</p>
 
                         <div class="for_btn">
-                            <img src="../img/a1.png" width="100%">
+                            <img src="../img/dog.jpg" width="100%">
                         </div>
                         <div class="students_star">
                             <p class="cell_list">
-                                <span class="lf">姓名：
-                                    <span class="darks">小明</span>
-                                </span>
-                                <span class="rt">薪资 ：
-                                    <span class="darks">15k</span>
-                                </span>
-                            </p>
-                            <p class="cell_list">
-                                <span>入职：
-                                    <span class="darks">把酒问青天</span>
+                                <span class="darks">
+                                    &nbsp;&nbsp;动物都是智者投胎转世。几千几万年累积的智慧，满满装在比人类小的躯体里，狗不用言语，它用全身来说话。
                                 </span>
                             </p>
                         </div>
@@ -382,7 +286,7 @@ export default {
       Awidth: 1024,
       scale: 0.6,
       auto: true,
-      turning: 1000
+      turning: 2000
     })
     ab.init()
   }
