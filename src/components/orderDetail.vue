@@ -3,14 +3,23 @@
     <Row>
       <Col span="20" offset="2">
       <div class = "wrapper">
-    <div class="orderNumber space">{{orderDetail[3]}}</div>
-    <Table :columns="columns" :data="orderDetail[0]"></Table>
+    <div class="orderNumber space"></div>
+    <Table :columns="columns" :data="orderDetailData.order"></Table>
     <div class="orderMoney space">
       <span>合计：</span>
-      {{orderDetail[2]}}元</div>
+      {{orderDetailData.totalMoney}}元</div>
     <div class="orderAdress space">
       <span>收货地址：</span>
-      {{orderDetail[1]}}</div>
+      {{orderDetailData.address}}
+    </div>
+    <div class="orderAdress space">
+      <span>订单状态：</span>
+      {{orderDetailData.status}}
+    </div>
+    <div class="orderAdress space">
+      <span>订单编号：</span>
+      {{orderDetailData.number}}
+    </div>
       <div class="back">
         <Button type="primary" @click="clickBack">确定</Button>
       </div>
@@ -21,13 +30,13 @@
 </template>
 
 <script>
-import user from '../js/user'
+import order from '../js/order'
 
 export default {
   name: 'orderDetail',
   data () {
     return {
-      orderDetail: user.totalOrder,
+      orderDetailData: order,
       columns: [
         {
           title: '商品',
@@ -48,14 +57,25 @@ export default {
           title: '数量',
           align: 'center',
           key: 'number'
+        },
+        {
+          title: '卖家电话',
+          align: 'center',
+          key: 'phone'
         }
       ]
     }
   },
   methods: {
     clickBack () {
+      console.log(order)
+      order.order.forEach(function (item, index) {
+        order.selectedOrder.forEach(function (sub) {
+          if (item === sub) order.order.splice(index, 1)
+        })
+      })
       this.$router.push({
-        path: '/home'
+        path: '/show'
       })
     }
   }

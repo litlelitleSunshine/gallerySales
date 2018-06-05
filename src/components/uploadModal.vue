@@ -1,5 +1,5 @@
 <template>
-  <Modal v-model="upload" title="上传拍卖商品">
+  <Modal v-model="upload" title="上传拍卖商品" ref="upload">
       <Form ref="uploadForm" :rules="rule" :model="arts">
         <FormItem prop="title" label="题目">
           <Input placeholder="请输入题目" v-model="arts.title"/>
@@ -13,9 +13,6 @@
         <FormItem prop="price" label="单价">
           <Input placeholder="请输入单价" v-model="arts.price"/>
         </FormItem>
-        <FormItem prop="number" label="数量">
-          <Input placeholder="请输入数量" v-model="arts.number"/>
-        </FormItem>
         <FormItem prop="tax" label="平台费用">
           <Input disabled v-model="arts.tax"/>
         </FormItem>
@@ -27,11 +24,12 @@
         </FormItem>
       </Form>
       <div class="img-wrap">
-      <Button @click="uploadImg">上传作品</Button>
+      <!-- <Button @click="uploadImg">上传作品</Button> -->
+      <input type="file" name="upfile" size="15">
         <img :src="img.src" alt="picture">
       </div>
       <div slot="footer">
-            <Button type="primary" size="large" long>上架</Button>
+            <Button type="primary" size="large" long @click="putAway">上架</Button>
         </div>
   </Modal>
 </template>
@@ -59,17 +57,21 @@ export default {
         title: [{required: true, message: '请输入商品名称'}],
         author: [{required: true, message: '请输入作者'}],
         description: [{required: true, message: '请输入商品简介'}],
-        price: [{required: true, type: 'number', message: '请输入单价'}],
-        number: [{required: true, type: 'number', message: '请输入商品数量'}],
+        price: [{required: true, message: '请输入单价'}],
         way: [{required: true, message: '请输入商品收款账号，注意这是唯一收款账号！'}]
       }
     }
   },
   methods: {
     uploadImg () {},
-    close () {
-      console.log('false')
-      this.$emit('init')
+    putAway (e) {
+      var self = this
+      e.preventDefault()
+      self.$refs['upload'].validate((valid) => {
+        if (valid) {
+          this.$Message.info('上架成功')
+        }
+      })
     }
   }
 }

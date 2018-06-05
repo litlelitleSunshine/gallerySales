@@ -17,16 +17,15 @@
               <router-link to="/show">逛一逛</router-link>
             </Menu-item>
             <Menu-item key="3" name="shoppingCar">
-              <Icon type="ios-cart" color="blue" size="16"></Icon>
-              购物车
-              <span>[{{number}}]</span>
+              <Icon type="ios-cart" color="rgb(80,107,158)" size="16"></Icon>
+              <a @click="goShoppingCar"> 购物车 </a>
             </Menu-item>
             <Menu-item key="4" name="favorite">
               <Icon type="ios-heart" color="red" size="16"></Icon>
                 <span>收藏夹</span>
             </Menu-item>
             <Menu-item key="5" name="login">
-              <a href="#"  @click="showLoginModal">登录</a>
+              <a href="#"  @click="showLoginModal">我的</a>
             </Menu-item>
             <Menu-item key="6" name="service">
               <router-link to="/concat"><a href="#" >联系客服 </a> </router-link>
@@ -43,6 +42,7 @@
 <script>
 import home from './components/home.vue'
 import Login from './components/login.vue'
+import user from './js/user'
 
 export default {
   name: 'navMenu',
@@ -54,14 +54,31 @@ export default {
   },
   components: {home, Login},
   methods: {
-    showLoginModal () {
-      this.$Modal.confirm({
-        closable: true,
-        title: '登录',
-        render: (h) => {
-          return h(Login)
-        }
-      })
+    showLoginModal (e) {
+      e.preventDefault()
+      if (!user.isLogin) {
+        this.$Modal.confirm({
+          closable: true,
+          title: '登录',
+          render: (h) => {
+            return h(Login)
+          }
+        })
+      } else {
+        this.$router.push({
+          path: '/personal'
+        })
+      }
+    },
+    goShoppingCar (e) {
+      e.preventDefault()
+      if (user.isLogin) {
+        this.$router.push({
+          path: '/order'
+        })
+      } else {
+        this.$Message.info('您暂未登录，请先登录')
+      }
     }
   }
 }

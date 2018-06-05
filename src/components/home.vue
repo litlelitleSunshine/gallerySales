@@ -2,7 +2,7 @@
 <div id="home">
     <div class="lb_gl">
         <div class="container">
-            <h1 class="turn_3d">Go watch for discovering!</h1>
+            <h1 class="turn_3d" @click="goShopping">Go watch for discovering!</h1>
             <div class="pictureSlider poster-main">
                 <div class="poster-btn poster-prev-btn"></div>
                 <ul id="zturn2" class="poster-list">
@@ -22,7 +22,6 @@
 
                     <li class="poster-item zturn-item">
                         <p class="xxgy">版画</p>
-
                         <div class="for_btn">
                             <img src="../img/print.jpg" width="100%">
                         </div>
@@ -274,6 +273,11 @@ export default {
         }
         window.zturn = zturn
       }(window, document))
+    },
+    goShopping () {
+      this.$router.push({
+        path: '/show'
+      })
     }
   },
   mounted: function () {
@@ -407,5 +411,11 @@ export default {
 
     #home li{
         list-style: none;
+    }
+
+    #home h1:hover {
+        cursor: pointer;
+        color:red;
+        font-style: italic
     }
 </style>

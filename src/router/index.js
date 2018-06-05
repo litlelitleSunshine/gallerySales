@@ -10,6 +10,7 @@ import personal from '@/components/personal'
 import orderDetail from '@/components/orderDetail'
 import chineseSource from '@/components/chineseSource'
 import ancientPoetry from '@/components/ancientPoetry'
+import story from '@/components/story'
 
 Vue.use(Router)
 
@@ -64,6 +65,11 @@ export default new Router({
       path: '/ancientPoetry',
       name: 'ancientPoetry',
       component: ancientPoetry
+    },
+    {
+      path: '/story',
+      name: 'story',
+      component: story
     }
   ]
 })

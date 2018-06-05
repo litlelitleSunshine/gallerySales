@@ -24,6 +24,9 @@
 
 <script>
 import gallery from '../js/share'
+import allUser from '../js/allUser'
+import user from '../js/user'
+
 export default {
   name: 'loginModal',
   data () {
@@ -52,11 +55,26 @@ export default {
     closeLoginModal () {
       this.$Modal.remove()
     },
-    login () {
+    login (e) {
       var self = this
+      e.preventDefault()
       self.$refs['loginModal'].validate((valid) => {
-        self.$Modal.remove()
-        window.location.href = 'http://localhost:8080/#/personal'
+        if (valid) {
+          allUser.forEach(function (children) {
+            if (children.phone === self.loginData.user || children.email === self.loginData.user) {
+              if (children.password === self.loginData.password) {
+                self.$Modal.remove()
+                user.isLogin = true
+                for (var key in children) {
+                  user[key] = children[key]
+                }
+                window.location.href = 'http://localhost:8080/#/personal'
+              } else {
+                self.$Message.info('你的账号或密码不正确，请重新输入')
+              }
+            }
+          })
+        }
       })
     }
   }

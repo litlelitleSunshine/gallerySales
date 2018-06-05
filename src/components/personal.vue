@@ -3,7 +3,7 @@
     <Row>
       <Col span="20" offset="2" class="wrapper">
       <div class="title">
-        <h2>Hi！{{name}},欢迎来到
+        <h2>Hi！{{userInfo.name}},欢迎来到
           <span class="discovery">Discovery</span></h2>
       </div>
       <Collapse v-model="active" accordion>
@@ -24,7 +24,7 @@
                   <Input v-model="info.password" type="password" clearable/>
                 </FormItem>
                 <FormItem>
-                  <Button type="primary" long>保存</Button>
+                  <Button type="primary" long @click="saveInfo">保存</Button>
                 </FormItem>
               </Form>
             </p>
@@ -32,7 +32,7 @@
         <Panel name="2">
             我的订单
             <p slot="content">
-              <Table :data="order" :columns="columns"/>
+              <Table :data="order.order" :columns="columns"/>
             </p>
         </Panel>
         <Panel name="3">
@@ -41,7 +41,7 @@
               <Button type="primary" @click="uploadArts">点击上传商品</Button>
               <upload v-show="upload"></upload>
               <span class="onlineTableTitle">在售商品</span>
-              <Table :data="order" :columns="columns"/>
+              <!-- <Table :data="order" :columns="columns"/> -->
             </p>
         </Panel>
         <Panel name="4">
@@ -57,10 +57,12 @@
 <script>
 import user from '../js/user'
 import gallery from '../js/share'
+import order from '../js/order'
 import upload from './uploadModal'
 
 export default {
   name: 'pesonal',
+  inject: ['reload'],
   components: { upload },
   data () {
     const validatePhone = (rule, value, callback) => {
@@ -82,7 +84,7 @@ export default {
       callback()
     }
     return {
-      name: user.name,
+      userInfo: user,
       active: '0',
       info: {
         name: user.name,
@@ -96,7 +98,7 @@ export default {
         email: [{required: true, validator: validateEmail}],
         password: [{required: true, message: '请输入密码'}]
       },
-      order: [],
+      order: order,
       columns: [
         {
           title: '商品',
@@ -117,15 +119,22 @@ export default {
           title: '数量',
           align: 'center',
           key: 'number'
-        },
-        {
-          title: '状态',
-          align: 'center',
-          key: 'status'
         }
+        // {
+        //   title: '状态',
+        //   align: 'center',
+        //   key: 'status',
+        //   render: (h, params) => {
+        //     return h('span', {}, params.row.status)
+        //   }
+        // }
       ],
       upload: false
     }
+  },
+  mounted () {
+    let self = this
+    console.log(self.order)
   },
   methods: {
     uploadArts () {
@@ -133,7 +142,13 @@ export default {
       self.upload = true
       setTimeout(function () {
         self.upload = false
-      }, 1000)
+      }, 500000)
+    },
+    saveInfo () {
+      for (var key in this.info) {
+        user[key] = this.info[key]
+      }
+      this.reload()
     }
   }
 }

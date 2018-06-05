@@ -44,31 +44,46 @@
     </div>
     <div class="show-item">
       <ul class="show-wrapper">
-        <li class="show-content" v-for="img in imgs" :key="img.id">
-          <img :src="img.src" @click="shoppingView(img.id)"/>
+        <li class="show-content" v-for="(img, index) in imgs" :class="{'shadows': index === current }" :key="img.goodsId" @mouseover="addShadows(index)" @mouseout="deleteShadows">
+          <img :src="img.src" @click="shoppingView(img.goodsId)"/>
         </li>
       </ul>
     </div>
     </Col>
     </Row>
-    <Modal v-model="viewShopping.display" :title="viewShopping.title">
+    <Modal v-model="displayModal" :title="viewShopping.title" class="detail-modal">
+      <Row class="item">
+        <Col span="24">
       <div class="img-wrap">
         <img :src="viewShopping.src" alt="picture">
       </div>
-      <ul class="info-wrap">
-        <li>作者
-          <p>{{viewShopping.author}}</p>
-        </li>
-        <li>简介
-          <p>{{viewShopping.description}}</p>
-        </li>
-        <li>单价
-          <p>{{viewShopping.price}}</p>
-        </li>
-        <li>数量
-          <p>{{viewShopping.totalNumber}}</p>
-        </li>
-      </ul>
+        </Col>
+      </Row>
+      <Row class="item">
+        <Col span="2">
+        <Icon type="ios-heart" size="20" :color="collectsColor" @click="collects"></Icon>
+        </Col>
+        <Col span="2" class="first-field">作者:</Col>
+        <Col span="16">{{viewShopping.author}}</Col>
+      </Row>
+      <Row class="item">
+        <Col span="2" class="first-field">简介:</Col>
+        <Col span="22">{{viewShopping.description}}</Col>
+      </Row>
+      <Row class="item">
+        <Col span="12">
+        <Row>
+        <Col span="4" class="first-field">单价:</Col>
+        <Col span="20">{{viewShopping.price}}</Col>
+        </Row>
+        </Col>
+        <Col span="12">
+        <Row>
+        <Col span="4" class="first-field">数量:</Col>
+        <Col span="20">{{viewShopping.number}}</Col>
+        </Row>
+        </Col>
+      </Row>
       <div slot="footer">
             <Button type="primary" size="large" long  @click="goShopping">购买</Button>
         </div>
@@ -102,38 +117,46 @@ export default {
         flowers: false,
         contentOthers: false
       },
+      current: '',
       imgs: picture.img,
-      viewShopping: {
-        display: false,
-        title: '',
-        src: '',
-        author: '',
-        description: '',
-        price: '',
-        totalNumber: 1,
-        number: 1
-      }
+      user: user,
+      collectsColor: '',
+      displayModal: false,
+      viewShopping: ''
     }
   },
+  mounted () {
+  },
   methods: {
+    // 绑定模态框数据
     shoppingView (id) {
-      var self = this
-      let source = gallery.findSource(id, self.imgs)
-      self.viewShopping.display = true
-      self.viewShopping = Object.assign({}, self.viewShopping, source)
+      let source = gallery.findSource(id, picture.img, 'goodsId')
+      this.displayModal = true
+      this.viewShopping = source
+    },
+    collects () {
     },
     goShopping () {
-      var self = this
-      if (!user.login) {
+      const self = this
+      if (!user.isLogin) {
         this.$Message.info({
           content: '您暂未登录，请先登录！',
           duration: 3})
       } else {
-        user.order.push(self.viewShopping)
+        if (!gallery.checkArr(self.viewShopping.goodsId, user.order)) {
+          user.order.push(this.viewShopping)
+          user.totalNumber++
+        }
         this.$router.push({
           path: '/order'
         })
       }
+    },
+    addShadows (index) {
+      this.current = index
+    },
+    deleteShadows () {
+      this.isActive = false
     }
   }
 }
@@ -182,13 +205,16 @@ export default {
 
 /* show-item style */
 #show-item .show-item .show-wrapper{
-margin-top:125px;
 background: white;
+padding: 0 80px;
+margin-top:125px;
 }
 #show-item .show-item .show-wrapper .show-content{
   list-style: none;
   display: inline-flex;
   height: 300px;
+  width: 300px;
+  margin-left: 10px;
 }
 #show-item .show-item .show-wrapper .show-content img
 {
@@ -196,5 +222,26 @@ display: block;
 width: 100%;
 height: 100%;
 object-fit:contain;
+}
+.shadows {
+  box-shadow: 5px 5px 5px #778899;
+}
+
+/* modal style */
+.ivu-modal {
+  margin-top: -60px;
+}
+.detail-modal .img-wrap {
+width: 100%;
+display: flex;
+justify-content: center;
+}
+.detail-modal .first-field{
+  color: blue;
+  font-size: 14px;
+}
+
+.detail-modal .item {
+  margin-top: 10px;
 }
 </style>
