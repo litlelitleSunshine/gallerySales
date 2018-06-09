@@ -8,7 +8,8 @@ import 'iview/dist/styles/iview.css'
 import './css/main.css'
 import './css/normalize.css'
 import 'qrcode'
-import store from './store/store.js'
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 
 Vue.config.productionTip = false
 Vue.use(iView)
@@ -17,7 +18,6 @@ Vue.use(iView)
 new Vue({
   el: '#app',
   router,
-  store,
   components: { App },
   template: '<App/>'
 })

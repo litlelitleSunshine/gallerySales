@@ -102,7 +102,22 @@ export default {
   name: 'show',
   components: { carousel, Login },
   mounted: function () {
-    console.log(user)
+    this.$http.get('http://localhost:8085/show')
+      .then((response) => {
+        // 响应成功回调
+        console.log(response.data)
+      }).catch(e => {
+        // 打印一下错误
+        console.log(e)
+      })
+    this.$http.get('http://localhost:8085/user')
+      .then((response) => {
+        // 响应成功回调
+        console.log(response.data)
+      }).catch(e => {
+        // 打印一下错误
+        console.log(e)
+      })
   },
   data () {
     return {
