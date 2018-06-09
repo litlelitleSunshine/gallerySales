@@ -1,3 +1,5 @@
+
+// 当前用户信息
 var user =
   {
     // id: 1 // id
@@ -15,6 +17,7 @@ var user =
     // isLogin: false, // 是否登录
     // order: [], // 订单表
     // totalNumber: 0 // 购物车中物品数量
+    // sale: [] 寄售商品列表
   }
 Object.defineProperties(user, {
   id: {
@@ -58,6 +61,10 @@ Object.defineProperties(user, {
   },
   totalNumber: {
     writable: true
+  },
+  sale: {
+    writable: true,
+    value: []
   }
 })
 export default user

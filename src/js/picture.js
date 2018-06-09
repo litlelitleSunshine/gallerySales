@@ -42,6 +42,7 @@ import watercolorFlower from '@/img/watercolor-flower.jpg'
 import watercolorPerson from '@/img/watercolor-person.jpg'
 import watercolorSights from '@/img/watercolor-sights.jpg'
 
+// 图片列表
 var picture = {}
 
 // *id:所属人id
@@ -339,7 +340,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 22,
+  goodsId: 21,
   author: '张三',
   price: 3000,
   description: '',
@@ -353,7 +354,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 24,
+  goodsId: 22,
   author: '张三',
   price: 3000,
   description: '',
@@ -367,7 +368,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 25,
+  goodsId: 23,
   author: '张三',
   price: 3000,
   description: '',
@@ -381,7 +382,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 28,
+  goodsId: 24,
   author: '张三',
   price: 3000,
   description: '',
@@ -395,7 +396,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 31,
+  goodsId: 25,
   author: '张三',
   price: 3000,
   description: '',
@@ -409,7 +410,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 32,
+  goodsId: 26,
   author: '张三',
   price: 3000,
   description: '',
@@ -423,7 +424,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 33,
+  goodsId: 27,
   author: '张三',
   price: 3000,
   description: '',
@@ -437,7 +438,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 34,
+  goodsId: 28,
   author: '张三',
   price: 3000,
   description: '',
@@ -451,7 +452,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 35,
+  goodsId: 29,
   author: '张三',
   price: 3000,
   description: '',
@@ -465,7 +466,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 36,
+  goodsId: 30,
   author: '张三',
   price: 3000,
   description: '',
@@ -479,7 +480,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 37,
+  goodsId: 31,
   author: '张三',
   price: 3000,
   description: '',
@@ -493,7 +494,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 38,
+  goodsId: 32,
   author: '张三',
   price: 3000,
   description: '',
@@ -507,7 +508,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 39,
+  goodsId: 33,
   author: '张三',
   price: 3000,
   description: '',
@@ -521,7 +522,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 40,
+  goodsId: 34,
   author: '张三',
   price: 3000,
   description: '',
@@ -535,7 +536,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 41,
+  goodsId: 35,
   author: '张三',
   price: 3000,
   description: '',
@@ -549,7 +550,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 42,
+  goodsId: 36,
   author: '张三',
   price: 3000,
   description: '',
@@ -563,7 +564,7 @@ picture.img = [{
 },
 {
   id: 1,
-  goodsId: 43,
+  goodsId: 37,
   author: '张三',
   price: 3000,
   description: '',

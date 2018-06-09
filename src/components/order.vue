@@ -32,7 +32,6 @@ import user from '../js/user'
 import order from '../js/order'
 import gallery from '../js/share'
 
-import QRCode from 'qrcode'
 export default {
   name: 'order',
   data () {
@@ -68,7 +67,7 @@ export default {
       orderData: user.order, // 表格中的数据
       userAddress: user.useAddress,
       total: 0,
-      noDataText: '您还未挑选任何作品噢~',
+      noDataText: '您还未挑选任何作品噢~,去<a href="http://localhost:8080/#/show">逛一逛</a>',
       payModal: false,
       selectedOrder: [],
       flag: 0
@@ -105,19 +104,12 @@ export default {
         })
       }
     },
-    useqrcode () {
-      this.QueryDetail = 'http://www.baidu.com/#/guard' + '?unique_code=' + this.QueryDetail
-      var canvas = document.getElementById('pay')
-      QRCode.toCanvas(canvas, this.QueryDetail, function (error) {
-        if (error) console.error(error)
-      })
-    },
     pay () {
       let self = this
       if (self.selectedOrder.length === 0) self.$Message.info('请选择需要购买的作品')
       else {
         self.payModal = true
-        self.useqrcode()
+        gallery.useqrcode()
         setTimeout(function () {
           self.payModal = false
           order.status = '已付款'
@@ -129,6 +121,11 @@ export default {
             path: '/orderDetail'
           })
         }, 3000)
+        user.order.forEach(function (item, index) {
+          self.selectedOrder.forEach(function (sub) {
+            if (sub === item.goodsId) user.order.splice(index, 1)
+          })
+        })
       }
     }
   }

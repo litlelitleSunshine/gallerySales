@@ -70,6 +70,17 @@ export default {
         })
       }
     },
+    messageShowLoginModal (e) {
+      e.preventDefault()
+      this.displayModal = false
+      this.$Modal.confirm({
+        closable: true,
+        title: '登录',
+        render: (h) => {
+          return h(Login)
+        }
+      })
+    },
     goShoppingCar (e) {
       e.preventDefault()
       if (user.isLogin) {
@@ -77,7 +88,16 @@ export default {
           path: '/order'
         })
       } else {
-        this.$Message.info('您暂未登录，请先登录')
+        this.$Message.info({
+          content: `您暂未登录，请先`,
+          render: (h, params) => {
+            return h('a', {
+              on: {
+                click: this.messageShowLoginModal
+              }
+            }, '登录')
+          },
+          duration: 3})
       }
     }
   }

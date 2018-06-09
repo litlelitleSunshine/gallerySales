@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import home from '@/components/home'
-import login from '@/components/login'
 import concat from '@/components/concat'
 import register from '@/components/register'
 import show from '@/components/show'
@@ -25,11 +24,6 @@ export default new Router({
       path: '/show',
       name: 'show',
       component: show
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: login
     },
     {
       path: '/concat',

@@ -44,7 +44,7 @@
     </div>
     <div class="show-item">
       <ul class="show-wrapper">
-        <li class="show-content" v-for="(img, index) in imgs" :class="{'shadows': index === current }" :key="img.goodsId" @mouseover="addShadows(index)" @mouseout="deleteShadows">
+        <li class="show-content" v-for="(img, index) in imgs" :class="{'shadows': index === current }" :key="img.goodsId" @mouseover="addShadows(index)">
           <img :src="img.src" @click="shoppingView(img.goodsId)"/>
         </li>
       </ul>
@@ -96,10 +96,14 @@ import carousel from './carousel'
 import picture from '../js/picture'
 import gallery from '../js/share'
 import user from '../js/user'
+import Login from './login'
 
 export default {
   name: 'show',
-  components: { carousel },
+  components: { carousel, Login },
+  mounted: function () {
+    console.log(user)
+  },
   data () {
     return {
       filter: {
@@ -125,8 +129,6 @@ export default {
       viewShopping: ''
     }
   },
-  mounted () {
-  },
   methods: {
     // 绑定模态框数据
     shoppingView (id) {
@@ -140,7 +142,14 @@ export default {
       const self = this
       if (!user.isLogin) {
         this.$Message.info({
-          content: '您暂未登录，请先登录！',
+          content: `您暂未登录，请先`,
+          render: (h, params) => {
+            return h('a', {
+              on: {
+                click: this.showLoginModal
+              }
+            }, '登录')
+          },
           duration: 3})
       } else {
         if (!gallery.checkArr(self.viewShopping.goodsId, user.order)) {
@@ -155,8 +164,16 @@ export default {
     addShadows (index) {
       this.current = index
     },
-    deleteShadows () {
-      this.isActive = false
+    showLoginModal (e) {
+      e.preventDefault()
+      this.displayModal = false
+      this.$Modal.confirm({
+        closable: true,
+        title: '登录',
+        render: (h) => {
+          return h(Login)
+        }
+      })
     }
   }
 }
